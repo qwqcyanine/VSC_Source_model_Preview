@@ -1,0 +1,50 @@
+{
+  "name": "source-model-preview",
+  "displayName": "Source Model Preview",
+  "description": "Preview Source Engine .smd model files in a webview with Three.js rendering",
+  "version": "0.0.1",
+  "publisher": "local",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Visualization"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onCustomEditor:sourceModelPreview.smd"
+  ],
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "sourceModelPreview.smd",
+        "displayName": "Source Model Preview",
+        "selector": [
+          {
+            "filenamePattern": "*.smd"
+          },
+          {
+            "filenamePattern": "*.dmx"
+          }
+        ],
+        "priority": "default"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "vscode:prepublish": "node esbuild.js"
+  },
+  "dependencies": {
+    "three": "^0.165.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/three": "^0.165.0",
+    "@types/vscode": "^1.90.0",
+    "esbuild": "^0.23.0",
+    "typescript": "^5.5.0"
+  }
+}

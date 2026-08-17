@@ -1,0 +1,10 @@
+.git/**
+.gitattributes
+node_modules/**
+src/**
+tsconfig.json
+esbuild.js
+samples/**
+.vscode/**
+**/*.map
+*.vsix
